@@ -3,30 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar</title>
+  <title>Popup Counter</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button id="openPopup">Open Popup</button>
 
-  <nav class="navbar">
-    <div class="logo">MySite</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <div class="menu-icon" id="menuIcon">&#9776;</div>
-  </nav>
-<!-- Gallery Section -->
-<section class="gallery">
-  <div class="gallery-item"><img src="https://via.placeholder.com/300" alt="Image 1"></div>
-  <div class="gallery-item"><img src="https://via.placeholder.com/300" alt="Image 2"></div>
-  <div class="gallery-item"><img src="https://via.placeholder.com/300" alt="Image 3"></div>
-  <div class="gallery-item"><img src="https://via.placeholder.com/300" alt="Image 4"></div>
-  <div class="gallery-item"><img src="https://via.placeholder.com/300" alt="Image 5"></div>
-  <div class="gallery-item"><img src="https://via.placeholder.com/300" alt="Image 6"></div>
-</section>
+  <!-- Popup Background -->
+  <div id="popupBackground" class="hidden">
+    <!-- Popup Box -->
+    <div id="popupBox">
+      <button id="closePopup" class="closeBtn">X</button>
+      <h2>Counter: <span id="counter">0</span></h2>
+      <button id="addBtn">+</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

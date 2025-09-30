@@ -1,87 +1,53 @@
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
 }
 
-/* navbar container */
-.navbar {
+/* Popup background */
+#popupBackground {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background: lightblue;
-  padding: 1em;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
 }
 
-/* logo text */
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: darkblue;
+/* When visible */
+#popupBackground.show {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* nav links list */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5em;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: darkblue;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: white;
-}
-
-/* hamburger icon hidden by default */
-.menu-icon {
-  display: none;
-  font-size: 2em;
-  cursor: pointer;
-}
-
-/* responsive styles */
-@media (max-width: 700px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: lightblue;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-}
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1em;
-  padding: 1em;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
+/* Popup box */
+#popupBox {
+  background: white;
+  padding: 20px;
   border-radius: 10px;
-  transition: transform 0.3s;
+  position: relative;
+  min-width: 200px;
+  transition: transform 0.3s ease;
+  transform: scale(0.8);
 }
 
-.gallery-item img:hover {
-  transform: scale(1.05);
+#popupBackground.show #popupBox {
+  transform: scale(1);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 50%;
 }
